@@ -27,10 +27,10 @@ var lastDay = 11;
 //write your code here
 for (var day = 1; day <= lastDay; day++) {
     if (day % 3 === 0) {
-        console.log(day,'- medicine');
+        console.log(day, '- medicine');
     }
     else {
-        console.log(day,' - rest');
+        console.log(day, ' - rest');
     }
 }
 
@@ -40,7 +40,7 @@ for (var day = 1; day <= lastDay; day++) {
 /** Problem 04 - (Delete / Store) */
 var fileName = "pdfData.jpg";
 //write your code here
-if (fileName.includes('#') || fileName.includes('.pdf') || fileName.includes('.docx')) {
+if (fileName.startsWith('#') || fileName.includes('.pdf') || fileName.includes('.docx')) {
     console.log('Store');
 }
 else {
@@ -59,13 +59,15 @@ console.log(generatedEmail);
 // Problem -05 Solved
 
 /** Problem 06 :  (Current Salary )  */
-var experience = 40;
+var experience = 0;
 var startingSalary = 30000;
 //write your code here
 var salary = startingSalary;
 for (var i = 1; i <= experience; i++) {
-    var increasedSalaryPerYear = salary / 100 * 5
-    salary = salary + increasedSalaryPerYear 
+    if (experience > 0) {
+        var increasedSalaryPerYear = salary / 100 * 5
+        salary = salary + increasedSalaryPerYear
+    }
 }
 var currentSalary = parseFloat(salary.toFixed(2))
 console.log(currentSalary);
